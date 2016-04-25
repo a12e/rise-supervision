@@ -1,5 +1,14 @@
-<h1>New Host</h1>
 
-<%= render 'form' %>
+<div class="container">
+	<div class="col-md-12">
+		<h1>New Host</h1>
+	</div>
 
-<%= link_to 'Back', hosts_path %>
+	<div class="col-md-12">
+		<%= render 'form' %>
+	</div>
+
+	<div class="col-md-12">
+		<%= link_to 'Back', hosts_path, :class => 'btn btn-default', :role => 'button' %>
+	</div>
+</div>

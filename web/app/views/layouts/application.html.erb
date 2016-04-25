@@ -5,13 +5,34 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta charset="UTF-8">
 </head>
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+	<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Supervision</a>
+			</div>
 
-  <%= yield %>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="<%= hosts_path %>">Hosts</a></li>
+				<li><a href="#">Services</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<div class="container">
+		<div class="col-md-12">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+		</div>
+	</div>
+
+	<%= yield %>
+
 
 </body>
 </html>
