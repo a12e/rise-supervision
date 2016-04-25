@@ -15,3 +15,6 @@ web/db/*.sqlite3-journal
 web/log/*
 !web/log/.keep
 web/tmp
+
+# MacOs garbage
+.DS_Store
