@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="col-md-12">
+    <h1 class="well">Listing Interfaces</h1>
+  </div>
+
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-md-4">Name</th>
+          <th class="col-md-4">IP</th>
+          <th class="col-md-4">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @interfaces.each do |interface| %>
+          <tr>
+            <td class="col-md-4"><%= interface.name %></td>
+            <td class="col-md-4"><%= interface.ip %></td>
+            <td class="col-md-4">
+              <%= link_to 'Show', interface, :class => 'btn btn-info' %>
+              <%= link_to 'Edit', edit_interface_path(interface), :class => 'btn btn-success' %>
+              <%= link_to 'Destroy', interface, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'  %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-12">
+    <%= link_to 'New Interfaces', new_interface_path, :class => 'btn btn-primary', :role => 'button' %>
+  </div>
+</div>

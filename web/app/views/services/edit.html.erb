@@ -1,6 +1,19 @@
-<h1>Editing Service</h1>
+<div class="container">
+	<div class="col-md-12">
+		<h1>Editing Services</h1>
+	</div>
 
-<%= render 'form' %>
+	<div class="col-md-12">
+		<%= form_for @service do |f| %>
+			<%= f.label :name %>:
+			<%= f.text_field :name %>
 
-<%= link_to 'Show', @service %> |
-<%= link_to 'Back', services_path %>
+			<%= f.submit %>
+		<% end %>
+	</div>
+
+	<div class="col-md-12">
+		<%= link_to 'Show', @service, :class => 'btn btn-primary', :role => 'button' %>
+		<%= link_to 'Back', services_path, :class => 'btn btn-default', :role => 'button' %>
+	</div>
+</div>

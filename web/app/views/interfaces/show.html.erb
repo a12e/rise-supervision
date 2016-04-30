@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="col-md-12">
+		<p>Name : <%= @interface.name %></p>
+		<p>IP : <%= @interface.ip %></p>
+	</div>
+
+	<div class="col-md-12">
+		<%= link_to 'Edit', edit_interface_path(@interface), :class => 'btn btn-primary', :role => 'button' %>
+		<%= link_to 'Back', interfaces_path, :class => 'btn btn-default', :role => 'button' %>
+	</div>
+</div>

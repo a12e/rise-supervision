@@ -9,25 +9,34 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+	<nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Supervision</a>
+				<a class="navbar-brand" href="/">Monitoring</a>
 			</div>
 
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="<%= hosts_path %>">Hosts</a></li>
-				<li><a href="#">Services</a></li>
-			</ul>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="<%= 'active' if params[:controller] == 'hosts' %>"><a href="<%= hosts_path %>">Hosts</a></li>
+<!-- 					<li class="<%= 'active' if params[:controller] == 'interfaces' %>"><a href="<%= interfaces_path %>">Interfaces</a></li>
+					<li class="<%= 'active' if params[:controller] == 'services' %>"><a href="<%= services_path %>">Services</a></li> -->
+				</ul>
+			</div>
 		</div>
-	</div>
 	</nav>
 
 	<div class="container">
 		<div class="col-md-12">
-			<p class="notice"><%= notice %></p>
-			<p class="alert"><%= alert %></p>
+			<div
+				<% if notice != nil %>
+					class="alert alert-info" role="alert"
+				<% end %>
+			><%= notice %></div>
+			<div 
+				<% if alert != nil %>
+					class="alert alert-danger" role="alert"
+				<% end %>
+			><%= alert %></div>
 		</div>
 	</div>
 

@@ -5,7 +5,29 @@
 	</div>
 
 	<div class="col-md-12">
-		<%= render 'form' %>
+		<%= form_for @host do |f| %>
+			<%= f.label :name %>:
+			<%= f.text_field :name %>
+			<ul>
+			<%= f.fields_for :interfaces do |interfaces_form| %>
+				<li>
+			    <%= interfaces_form.label :name %>
+			    <%= interfaces_form.text_field :name %>
+			    <%= interfaces_form.label :ip %>
+			    <%= interfaces_form.text_field :ip %>
+			    </li>
+			<% end %>
+			</ul>
+			<ul>
+			<%= f.fields_for :services do |services_form| %>
+				<li>
+			    <%= services_form.label :name %>
+			    <%= services_form.text_field :name %>
+			    </li>
+			<% end %>
+			</ul>
+			<%= f.submit %>
+		<% end %>
 	</div>
 
 	<div class="col-md-12">

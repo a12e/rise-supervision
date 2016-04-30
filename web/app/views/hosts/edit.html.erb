@@ -5,7 +5,12 @@
 	</div>
 
 	<div class="col-md-12">
-		<%= render 'form' %>
+		<%= form_for @host do |f| %>
+			<%= f.label :name %>:
+			<%= f.text_field :name %>
+
+			<%= f.submit %>
+		<% end %>
 	</div>
 
 	<div class="col-md-12">
