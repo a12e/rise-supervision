@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="col-md-12">
+		<h1>Editing Interface</h1>
+	</div>
+
+	<div class="col-md-12">
+		<%= form_for @interface do |f| %>
+			<%= f.label :name %>:
+			<%= f.text_field :name %>
+			<%= f.label :ip %>:
+			<%= f.text_field :ip %>
+
+			<%= f.submit %>
+		<% end %>
+	</div>
+
+	<div class="col-md-12">
+		<%= link_to 'Show', @interface, :class => 'btn btn-primary', :role => 'button' %>
+		<%= link_to 'Back', interfaces_path, :class => 'btn btn-default', :role => 'button' %>
+	</div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425073846) do
+ActiveRecord::Schema.define(version: 20160429153730) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              default: "", null: false
@@ -53,7 +53,10 @@ ActiveRecord::Schema.define(version: 20160425073846) do
     t.datetime "updated_at", null: false
     t.string   "name"
     t.integer  "service_id"
+    t.integer  "host_id"
   end
+
+  add_index "services", ["host_id"], name: "index_services_on_host_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -15,6 +15,8 @@ class HostsController < ApplicationController
   # GET /hosts/new
   def new
     @host = Host.new
+    2.times {@host.interfaces.build}
+    2.times {@host.services.build}
   end
 
   # GET /hosts/1/edit
@@ -69,6 +71,7 @@ class HostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def host_params
-      params.fetch(:host, {})
+      #params.fetch(:host, {})
+      params.require(:host).permit(:name, interfaces_attributes: [:name, :ip], services_attributes: [:name])
     end
 end

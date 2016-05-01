@@ -1,18 +1,20 @@
 <div class="container">
 	<div class="col-md-12">
-		<h1>New Host</h1>
+		<h1>New Interface</h1>
 	</div>
 
 	<div class="col-md-12">
-		<%= form_for @service do |f| %>
+		<%= form_for @interface do |f| %>
 			<%= f.label :name %>:
 			<%= f.text_field :name %>
+			<%= f.label :ip %>:
+			<%= f.text_field :ip %>
 
 			<%= f.submit %>
 		<% end %>
 	</div>
 
 	<div class="col-md-12">
-		<%= link_to 'Back', services_path, :class => 'btn btn-default', :role => 'button' %>
+		<%= link_to 'Back', interfaces_path, :class => 'btn btn-default', :role => 'button' %>
 	</div>
 </div>

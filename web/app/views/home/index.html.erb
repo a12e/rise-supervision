@@ -1,1 +1,53 @@
-<h1>Home#index</h1>
+<div class="container">
+	<div class="col-md-12">
+		<% @hosts.each do |host| %>
+			<div class="panel panel-primary">
+				<div class="panel-heading">Host : <%= host.name %></div>
+				<% if !host.interfaces.empty? %>
+					<table class="table">
+						<tr	>
+							<th class="col-md-4 col-sm-4">Interface Name</th>
+							<th class="col-md-4 col-sm-4">Ip Address</th>
+							<th class="col-md-4 col-sm-4">Status</th>
+						</tr>
+						<% host.interfaces.each do |interface| %>
+							<tr
+								<% if interface.status == "up" %>
+									class="success"
+								<% else %>
+									class="danger"
+								<% end %>
+							>
+								<td class="col-md-4 col-sm-4"><%= interface.name %></td>
+								<td class="col-md-4 col-sm-4"><%= interface.ip %></td>
+								<td class="col-md-4 col-sm-4"><%= interface.status %></td>
+							</tr>
+						<% end %>
+					</table>
+				<% end %>
+				<% if !host.services.empty? %>
+					<table class="table">
+						<tr>
+							<th class="col-md-4 col-sm-4">Service Name</th>
+							<th class="col-md-4 col-sm-4">Infos</th>
+							<th class="col-md-4 col-sm-4">Status</th>
+						</tr>
+						<% host.services.each do |service| %>
+							<tr
+								<% if service.status == "up" %>
+									class="success"
+								<% else %>
+									class="danger"
+								<% end %>
+							>
+								<td class="col-md-4 col-sm-4"><%= service.name %></td>
+								<td class="col-md-4 col-sm-4"><%= service.infos %></td>
+								<td class="col-md-4 col-sm-4" ><%= service.status %></td>
+							</tr>
+						<% end %>
+					</table>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>

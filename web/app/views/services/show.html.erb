@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="col-md-12">
+		<p>Name : <%= @service.name %></p>
+	</div>
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+	<div class="col-md-12">
+		<%= link_to 'Edit', edit_service_path(@service), :class => 'btn btn-primary', :role => 'button' %>
+		<%= link_to 'Back', services_path, :class => 'btn btn-default', :role => 'button' %>
+	</div>
+</div>
